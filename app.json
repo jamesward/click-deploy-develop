@@ -1,0 +1,9 @@
+{
+  "name": "Click, Deploy, Develop",
+  "description": "Silky smooth",
+  "repository": "https://github.com/jamesward/click-deploy-develop",
+  "keywords": ["express"],
+  "env": {
+    "NPM_CONFIG_PRODUCTION": false
+  }
+}

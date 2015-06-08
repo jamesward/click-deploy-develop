@@ -1,0 +1,26 @@
+{
+  "name": "gulp-atom",
+  "version": "0.0.0",
+  "description": "Gulp Atom",
+  "dependencies": {
+    "express": "4.12.4"
+  },
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.5",
+    "gulp-atom-downloader": "^0.0.2",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-livereload": "^3.8.0",
+    "gulp-heroku-source-deployer": "^0.0.1",
+    "gulp-gzip": "^1.1.0",
+    "gulp-tar": "^1.4.0"
+  },
+  "engines": {
+    "node": "0.12.4"
+  },
+  "scripts": {
+    "start": "node app",
+    "postinstall": "node_modules/.bin/gulp bower-install"
+  }
+}
