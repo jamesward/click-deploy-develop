@@ -69,4 +69,4 @@ gulp.task('heroku-deploy', function() {
 
 
 // Default
-gulp.task('default', []);
+gulp.task('default', ['atom', 'server']);
