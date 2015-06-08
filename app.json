@@ -4,6 +4,6 @@
   "repository": "https://github.com/jamesward/click-deploy-develop",
   "keywords": ["express"],
   "env": {
-    "NPM_CONFIG_PRODUCTION": false
+    "NPM_CONFIG_PRODUCTION": "false"
   }
 }
