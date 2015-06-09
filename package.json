@@ -13,7 +13,9 @@
     "gulp-livereload": "^3.8.0",
     "gulp-heroku-source-deployer": "^0.0.1",
     "gulp-gzip": "^1.1.0",
-    "gulp-tar": "^1.4.0"
+    "gulp-tar": "^1.4.0",
+    "atom-package-manager": "^0.171.0",
+    "dotenv": "^1.1.0"
   },
   "engines": {
     "node": "0.12.4"
