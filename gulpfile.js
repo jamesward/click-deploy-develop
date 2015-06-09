@@ -17,27 +17,6 @@ gulp.task('server', function() {
       process.stdout.write(chunk);
     });
   });
-
-  gulp.watch('bower.json', ['bower-install', livereload.reload]);
-});
-
-
-// Update the Bower dependencies based on the bower.json file
-gulp.task('bower-install', function(next) {
-  require('bower').commands.install([], {}, { interactive: false })
-    .on('end', function () {
-      gutil.log('Bower Dependencies Updated');
-      next();
-    })
-    .on('log', function (log) {
-      if (log.level == 'action' && log.id == 'install') {
-        gutil.log('Added Bower Dependency: ', log.message);
-      }
-    })
-    .on('error', function (error) {
-      gutil.error('Bower Error: ', error);
-      next(error);
-    });
 });
 
 
@@ -57,7 +36,7 @@ gulp.task('heroku-deploy', function() {
   var apiToken = process.env.HEROKU_API_TOKEN;
   var appName = process.env.HEROKU_APP_NAME || require("path").basename(__dirname);
 
-  return gulp.src(['app.js', 'bower.json', 'gulpfile.js', 'package.json', 'gulp', 'gulp.exe'])
+  return gulp.src(['app.js', 'gulpfile.js', 'package.json', 'gulp', 'gulp.exe'])
     .pipe(require('gulp-tar')('app.tar'))
     .pipe(require('gulp-gzip')())
     .pipe(require('gulp-heroku-source-deployer').deploy(apiToken, appName))

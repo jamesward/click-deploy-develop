@@ -6,7 +6,6 @@
     "express": "4.12.4"
   },
   "devDependencies": {
-    "bower": "^1.4.1",
     "gulp": "^3.9.0",
     "gulp-util": "^3.0.5",
     "gulp-atom-downloader": "^0.0.2",
@@ -20,7 +19,6 @@
     "node": "0.12.4"
   },
   "scripts": {
-    "start": "node app",
-    "postinstall": "node_modules/.bin/gulp bower-install"
+    "start": "node app"
   }
 }
