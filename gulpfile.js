@@ -26,7 +26,7 @@ gulp.task('atom', function() {
   var proc = require('child_process');
 
   return atomExePath().then(function(atomExePath) {
-    return proc.spawn(atomExePath, ['./']);
+    return proc.spawn(atomExePath, ['./', 'README.md']);
   });
 });
 
