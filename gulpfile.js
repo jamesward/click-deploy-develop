@@ -29,15 +29,24 @@ gulp.task('atom', function(cb) {
 
   atomExePath().then(function(atomExePath) {
     var apm = require('atom-package-manager/lib/apm-cli');
+    // todo: cleanup
     // quietly install gulp-control
     apm.run(['install', '-q', 'gulp-control'], function(error) {
       if (error) {
         cb(error);
       }
       else {
-        proc.spawn(atomExePath, ['./', 'README.md']).on('close', function(code) {
-          if (code == 0) cb();
-          else cb('Atom shutdown with an error.');
+        // quietly install heroku-tools
+        apm.run(['install', '-q', 'heroku-tools'], function(error) {
+          if (error) {
+            cb(error);
+          }
+          else {
+            proc.spawn(atomExePath, ['./', 'README.md']).on('close', function (code) {
+              if (code == 0) cb();
+              else cb('Atom shutdown with an error.');
+            });
+          }
         });
       }
     });
