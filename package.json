@@ -8,7 +8,7 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-util": "^3.0.5",
-    "gulp-atom-downloader": "^0.0.2",
+    "gulp-atom-downloader": "^0.1.0",
     "gulp-nodemon": "^2.0.3",
     "gulp-livereload": "^3.8.0",
     "gulp-heroku-source-deployer": "^0.0.1",

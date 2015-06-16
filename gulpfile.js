@@ -24,27 +24,26 @@ gulp.task('server', function() {
 
 // Install the gulp-control Atom package and then run Atom
 gulp.task('atom', function(cb) {
-  var atomExePath = require('gulp-atom-downloader');
+  var atomPaths = require('gulp-atom-downloader');
   var proc = require('child_process');
   var path = require('path');
 
-  atomExePath().then(function(atomExePath) {
+  atomPaths().then(function(atomPaths) {
     // todo: cleanup
-    var apm = path.join(path.dirname(atomExePath), '..', 'Resources', 'app', 'apm', 'bin', 'apm');
 
     // quietly install gulp-control
-    proc.spawn(apm, ['install', '-q', 'gulp-control']).on('close', function (code) {
+    proc.spawn(atomPaths.apm, ['install', '-q', 'gulp-control']).on('close', function (code) {
       if (code != 0) {
         cb('Could not use apm to install gulp-control.');
       }
       else {
         // quietly install heroku-tools
-        proc.spawn(apm, ['install', '-q', 'heroku-tools']).on('close', function (code) {
+        proc.spawn(atomPaths.apm, ['install', '-q', 'heroku-tools']).on('close', function (code) {
           if (code != 0) {
             cb('Could not use apm to install heroku-tools.');
           }
           else {
-            proc.spawn(atomExePath, ['./', 'README.md']).on('close', function (code) {
+            proc.spawn(atomPaths.atom, ['./', 'README.md']).on('close', function (code) {
               if (code == 0) cb();
               else cb('Atom shutdown with an error.');
             });
