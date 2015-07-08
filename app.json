@@ -1,6 +1,6 @@
 {
   "name": "Click, Deploy, Develop",
-  "description": "Silky smooth",
+  "description": "A simple Node.js application that can be instantly deployed on Heroku and provides an out-of-the-box experience for local development",
   "repository": "https://github.com/jamesward/click-deploy-develop",
   "keywords": ["express"],
   "env": {

@@ -8,12 +8,15 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-util": "^3.0.5",
-    "gulp-atom-downloader": "^0.1.0",
+    "gulp-atom-downloader": "^0.2.0",
     "gulp-nodemon": "^2.0.3",
     "gulp-livereload": "^3.8.0",
     "gulp-heroku-source-deployer": "^0.0.1",
     "gulp-gzip": "^1.1.0",
     "gulp-tar": "^1.4.0",
+    "netrc2": "0.1.1",
+    "readline-sync": "^1.2.19",
+    "request": "^2.57.0",
     "dotenv": "^1.1.0"
   },
   "engines": {
